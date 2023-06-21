@@ -35,3 +35,6 @@ class teacher(models.model):
     sex = models.CharField(max_length=1, choices=SEX_CHOICES)
     address = models.CharField(max_length=255)
     phone = models.CharField(max_length=20)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
