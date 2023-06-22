@@ -22,7 +22,7 @@ class student(models.Model):
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
     
-class teacher(models.model):
+class teacher(models.Model):
     teacher_id = models.AutoField(primary_key = True)
     password = models.CharField(max_length=10)
     first_name = models.CharField(max_length=30)
@@ -43,7 +43,7 @@ class teacher(models.model):
 class attendace(models.Model):
     student_id = models.ForeignKey('Student', on_delete=models.CASCADE)
     teacher_id = models.ForeignKey('Teacher',on_delete=models.CASCADE )
-    date = models.DateField.auto_now()
+    date = models.DateField()
     STATUS_CHOICES = [
         ('Yes', 'Yes'),
         ('No', 'No'),
