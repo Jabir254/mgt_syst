@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class student(models.Model):
     student_id = models.AutoField(primary_key = True)
+    teacher = models.ForeignKey('Teacher',on_delete=models.CASCADE)
     password = models.CharField(max_length=10)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -38,3 +39,16 @@ class teacher(models.model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+    
+class attendace(models.Model):
+    student_id = models.ForeignKey('Student', on_delete=models.CASCADE)
+    teacher_id = models.ForeignKey('Teacher',on_delete=models.CASCADE )
+    date = models.DateField.auto_now()
+    STATUS_CHOICES = [
+        ('Yes', 'Yes'),
+        ('No', 'No'),
+    ]
+    status = models.CharField(max_length=3, choices=STATUS_CHOICES)
+
+    def __str__(self):
+         return f'{self.user_id} - {self.date}'
