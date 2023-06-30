@@ -7,10 +7,18 @@
     <link rel="stylesheet" href="{% static 'app/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'app/base.css' %}">
     <title>EduSync</title>
+    <style>
+      body {
+
+        background: #457fca;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #5691c8, #457fca);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #5691c8, #457fca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary top-bar">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark navbar-dark top-bar">
           <div class="container">
             <a class="navbar-brand" href="/">
               <img src="{% static 'images/logo.jpeg'%}" class="img-fluid" alt="logo" width="90" height="50">
@@ -34,11 +42,11 @@
                 </ul>
 
                 <div class="container">
-                  <div class="row">
-                    <div class="col-6">
-                      <button class="btn btn-primary">Login</button>
+                  <div class="row auto">
+                    <div class="col-4">
+                      <button class="btn btn-primary" data-tor="hover:bg-lighten(xl)">Login</button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                       <button class="btn btn-primary">Sign Up</button>
                     </div>
                   </div>
