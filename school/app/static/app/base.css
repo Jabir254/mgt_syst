@@ -1,0 +1,28 @@
+.image-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    transition: transform 0.3s ease;
+  }
+
+  .image-container:hover img {
+    transform: scale(1.1);
+  }
+
+  .image-description {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .image-container:hover .image-description {
+    opacity: 1;
+  }
